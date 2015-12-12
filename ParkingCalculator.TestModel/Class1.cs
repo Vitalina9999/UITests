@@ -8,5 +8,6 @@ namespace ParkingCalculator.TestModel
 {
     public class Class1
     {
+        //
     }
 }
