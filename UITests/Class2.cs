@@ -8,5 +8,6 @@ namespace UITests
 {
     class Class2
     {
+        //Add new comment
     }
 }
