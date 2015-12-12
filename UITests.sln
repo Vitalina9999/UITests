@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITests", "UITests\UITests.csproj", "{3EFED0C9-F698-4F24-9977-A5E3BE2C67EA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITests.Core", "UITests.Core\UITests.Core.csproj", "{8A0C828C-DF56-455E-AFF9-02E9D3CCC392}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ParkingCalculator", "ParkingCalculator", "{942B0E40-C2DD-444E-9706-ED5AD4ACAF14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{907F3670-91C6-43D7-8B03-E2113F1B668E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EFED0C9-F698-4F24-9977-A5E3BE2C67EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EFED0C9-F698-4F24-9977-A5E3BE2C67EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EFED0C9-F698-4F24-9977-A5E3BE2C67EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EFED0C9-F698-4F24-9977-A5E3BE2C67EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A0C828C-DF56-455E-AFF9-02E9D3CCC392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8A0C828C-DF56-455E-AFF9-02E9D3CCC392}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A0C828C-DF56-455E-AFF9-02E9D3CCC392}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -24,5 +22,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A0C828C-DF56-455E-AFF9-02E9D3CCC392} = {907F3670-91C6-43D7-8B03-E2113F1B668E}
 	EndGlobalSection
 EndGlobal
