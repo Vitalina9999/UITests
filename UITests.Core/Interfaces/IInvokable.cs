@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UITests.Core
+namespace UITests.Core.Interfaces
 {
-    class Class1
+    public interface IInvokable
     {
+        void Invoke();
+        bool IsDisplayed();
     }
 }
