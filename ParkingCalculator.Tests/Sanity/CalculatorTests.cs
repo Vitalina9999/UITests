@@ -18,11 +18,11 @@ namespace ParkingCalculator.Tests.Sanity
             //A
             ParkingCalculatorPage parkingCalculatorPage = new ParkingCalculatorPage();
             parkingCalculatorPage.Invoke();
-            
+
             //A
             parkingCalculatorPage.DdLot.Click();
 
-          //  IWebElement selectSTP = 
+            //  IWebElement selectSTP = 
 
             //A
         }
