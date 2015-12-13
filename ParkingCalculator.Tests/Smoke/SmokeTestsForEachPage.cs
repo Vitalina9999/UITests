@@ -34,6 +34,7 @@ namespace ParkingCalculator.Tests.Smoke
         [TestMethod]
         public void HomePage_VerifyExpectedElements()
         {
+         
             PageTest(Pages.HomePage);
         }
 
