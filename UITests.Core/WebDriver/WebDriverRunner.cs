@@ -96,16 +96,16 @@ namespace UITests.Core.WebDriver
             {
 
                 case browser_Firefox:
-                    return new FirefoxDriver();
+                   return new FirefoxDriver();
                 case browser_Chrome:
                     return new ChromeDriver();
                 case browser_InternetExplorer:
-                    return new InternetExplorerDriver();
+                   return new InternetExplorerDriver();
                 case browser_PhantomJS:
                     return new PhantomJSDriver();
                 case browser_Safari:
                     return new SafariDriver();
-                default:
+               default:
                     throw new ArgumentException(String.Format(@"<{0}> was not recognized as supported browser. This parameter is case sensitive", browserName),
                                                 "WebDriverOptions.BrowserName");
             }

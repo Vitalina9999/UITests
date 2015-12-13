@@ -20,9 +20,13 @@ namespace ParkingCalculator.Tests.Sanity
             parkingCalculatorPage.Invoke();
             
             //A
-            parkingCalculatorPage.DdLot.Click();
+            parkingCalculatorPage.DdlChooseALot.Click();
 
-          //  IWebElement selectSTP = 
+            IWebElement selectSTP = parkingCalculatorPage.DdlChooseALot.FindElement(By.Name("STP"));
+            selectSTP.Click();
+
+           
+
 
             //A
         }
