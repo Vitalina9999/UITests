@@ -37,6 +37,7 @@ namespace ParkingCalculator.Tests.Smoke
             PageTest(Pages.HomePage);
         }
 
+        //sdgfsfdsfdsf
         //[TestMethod]
         //public void CreateNewAccountPage_VerifyExpectedElements()
         //{
