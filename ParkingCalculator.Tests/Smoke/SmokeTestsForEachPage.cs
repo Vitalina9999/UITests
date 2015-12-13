@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ParkingCalculator.TestModel;
+using ParkingCalculator.TestModel.PageDeclarations;
 
 namespace ParkingCalculator.Tests.Smoke
 {
@@ -34,13 +35,15 @@ namespace ParkingCalculator.Tests.Smoke
         [TestMethod]
         public void HomePage_VerifyExpectedElements()
         {
-            PageTest(Pages.HomePage);
+            ParkingCalculatorPage parkingCalculatorPage = Pages.ParkingCalculatorPage;
+
+            PageTest(parkingCalculatorPage);
         }
 
         //[TestMethod]
         //public void CreateNewAccountPage_VerifyExpectedElements()
         //{
-        //    PageTest(Pages.HomePage);
+        //    PageTest(Pages.CreateNewAccountPage_VerifyExpectedElements);
         //}
     }
 }

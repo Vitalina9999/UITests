@@ -47,11 +47,11 @@ namespace ParkingCalculator.TestModel
         // Put your new pages here: 
         //=======================================================================================
 
-        public static HomePage HomePage
+        public static ParkingCalculatorPage ParkingCalculatorPage
         {
             get
             {
-                return GetPage<HomePage>();
+                return GetPage<ParkingCalculatorPage>();
             }
         }
     }
