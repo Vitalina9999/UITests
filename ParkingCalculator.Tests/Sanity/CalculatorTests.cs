@@ -18,6 +18,7 @@ namespace ParkingCalculator.Tests.Sanity
             //A
             ParkingCalculatorPage parkingCalculatorPage = new ParkingCalculatorPage();
             parkingCalculatorPage.Invoke();
+
             
             //A
             parkingCalculatorPage.DdlChooseALot.Click();
@@ -27,6 +28,7 @@ namespace ParkingCalculator.Tests.Sanity
 
            
 
+          //  IWebElement selectSTP = 
 
             //A
         }

@@ -8,7 +8,7 @@ using ParkingCalculator.TestModel.PageDeclarations;
 namespace ParkingCalculator.TestModel
 {
     /**   
-        The class `MyPages` is an entry point for your PageObjects.   \n
+        The class `Pages` is an entry point for your PageObjects.   \n
         This is a Factory class, which is accessible from any place of the code.  \n
         Allows to call PegeObject actions from tests as well as from another PaeObjects   \n
     */
