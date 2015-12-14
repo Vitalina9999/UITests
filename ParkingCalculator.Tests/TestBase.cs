@@ -12,7 +12,7 @@ namespace ParkingCalculator.Tests
 {
     public abstract class TestBase
     {
-        protected TestContext _testContext;
+        private TestContext _testContext;
 
         public TestContext TestContext
         {

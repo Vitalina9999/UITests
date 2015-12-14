@@ -13,24 +13,39 @@ namespace ParkingCalculator.Tests.Sanity
     public class CalculatorTests
     {
         [TestMethod]
-        public void gefdjh()
+        public void CheckAllLotsTest()
         {
-            //A
+            //ARRANGE
             ParkingCalculatorPage parkingCalculatorPage = new ParkingCalculatorPage();
             parkingCalculatorPage.Invoke();
 
-            
-            //A
+            List<string> lotOption = new List<string>();
+            lotOption.Add("Short-Term Parking");
+            lotOption.Add("Economy Parking");
+            lotOption.Add("Long-Term Surface Parking");
+            lotOption.Add("Long-Term Garage Parking");
+            lotOption.Add("Valet Parking");
+
+            //ACT
             parkingCalculatorPage.DdlChooseALot.Click();
 
-            IWebElement selectSTP = parkingCalculatorPage.DdlChooseALot.FindElement(By.Name("STP"));
-            selectSTP.Click();
+            IList<IWebElement> optionList = parkingCalculatorPage.DdlChooseALot.FindElements(By.TagName("option"));
 
-           
+            //ASSERT
+            Assert.AreEqual(5, optionList.Count);
 
-          //  IWebElement selectSTP = 
+            foreach (IWebElement selectOption in optionList)
+            {
+                string textOption = selectOption.Text;
 
-            //A
+                Assert.IsTrue(lotOption.Contains(textOption), "Oops, text " + textOption + " does not exist");
+            }
         }
+
+        [TestMethod]
+        public void StpLotTest()
+        {
+        }
+
     }
 }

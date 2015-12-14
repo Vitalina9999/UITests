@@ -12,7 +12,7 @@ namespace ParkingCalculator.TestModel.PageDeclarations
     {
         #region
 
-        [FindsBy(How = How.Id, Using = @"id(""Lot"")")]
+        [FindsBy(How = How.Id, Using = "Lot")]
         public IWebElement DdlChooseALot { get; set; }
 
         
@@ -30,7 +30,7 @@ namespace ParkingCalculator.TestModel.PageDeclarations
         }
         public override void VerifyExpectedElementsAreDisplayed()
         {
-            VerifyElementVisible("txtUserName", DdlChooseALot);
+            VerifyElementVisible("DdlChooseALot", DdlChooseALot);
         }
     }
 }
