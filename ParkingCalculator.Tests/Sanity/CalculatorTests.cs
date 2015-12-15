@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using ParkingCalculator.TestModel.PageDeclarations;
 
 namespace ParkingCalculator.Tests.Sanity
@@ -26,15 +27,10 @@ namespace ParkingCalculator.Tests.Sanity
             lotOption.Add("Long-Term Garage Parking");
             lotOption.Add("Valet Parking");
 
-            //ACT
-            parkingCalculatorPage.DdlChooseALot.Click();
-
-            IList<IWebElement> optionList = parkingCalculatorPage.DdlChooseALot.FindElements(By.TagName("option"));
-
             //ASSERT
-            Assert.AreEqual(5, optionList.Count);
+            Assert.AreEqual(5, parkingCalculatorPage.DdlChooseALot.Options.Count);
 
-            foreach (IWebElement selectOption in optionList)
+            foreach (IWebElement selectOption in parkingCalculatorPage.DdlChooseALot.Options)
             {
                 string textOption = selectOption.Text;
 
@@ -45,7 +41,30 @@ namespace ParkingCalculator.Tests.Sanity
         [TestMethod]
         public void StpLotTest()
         {
-        }
+            //ARRANGE
+            ParkingCalculatorPage parkingCalculatorPage = new ParkingCalculatorPage();
+            parkingCalculatorPage.Invoke();
 
+            //ACT
+            
+            parkingCalculatorPage.DdlChooseALot.SelectByText("Short-Term Parking");
+
+           // parkingCalculatorPage.BtnEntryDateTimeCalendar.Click();
+            
+           // IList<string>  entryDateWindow = parkingCalculatorPage.Driver.WindowHandles;
+            
+           // string sadsa = parkingCalculatorPage.Driver.CurrentWindowHandle;
+
+            //IWebElement fdsf = parkingCalculatorPage.Table.SelectByValue("bgcolor").Equals("#FFFF33");
+
+            parkingCalculatorPage.EntryDateInput.Clear();
+
+            
+          
+
+            parkingCalculatorPage.BtnCalculate.Click();
+
+            //ASSERT
+        }
     }
 }
