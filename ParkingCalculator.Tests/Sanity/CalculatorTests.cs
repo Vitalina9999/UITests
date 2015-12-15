@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,26 +42,63 @@ namespace ParkingCalculator.Tests.Sanity
         [TestMethod]
         public void StpLotTest()
         {
+
+
             //ARRANGE
             ParkingCalculatorPage parkingCalculatorPage = new ParkingCalculatorPage();
             parkingCalculatorPage.Invoke();
 
             //ACT
-            
+
             parkingCalculatorPage.DdlChooseALot.SelectByText("Short-Term Parking");
 
-           // parkingCalculatorPage.BtnEntryDateTimeCalendar.Click();
-            
-           // IList<string>  entryDateWindow = parkingCalculatorPage.Driver.WindowHandles;
-            
-           // string sadsa = parkingCalculatorPage.Driver.CurrentWindowHandle;
+            string currentWindowName = parkingCalculatorPage.Driver.CurrentWindowHandle;
 
-            //IWebElement fdsf = parkingCalculatorPage.Table.SelectByValue("bgcolor").Equals("#FFFF33");
+            parkingCalculatorPage.BtnEntryDateTimeCalendar.Click();
 
-            parkingCalculatorPage.EntryDateInput.Clear();
+
+
+            IList<string> windowNames = parkingCalculatorPage.Driver.WindowHandles;
+
+            foreach (var windowName in windowNames)
+            {
+                if (!windowName.Equals(currentWindowName))
+                {
+                    IWebDriver webDriver = parkingCalculatorPage.Driver.SwitchTo().Window(windowName);
+
+                    ReadOnlyCollection<IWebElement> tds = webDriver.FindElements(By.TagName("td"));
+
+                    IList<IWebElement> calenderLinks = new List<IWebElement>();
+                    foreach (var td in tds)
+                    {
+                        if (td.GetAttribute("width") == "20")
+                        {
+                            IWebElement link = td.FindElement(By.TagName("a"));
+                            calenderLinks.Add(link);
+                        }
+                    }
+
+                    //////////
+                    int currentDay = DateTime.Now.Day;
+
+                    foreach (var calenderLink in calenderLinks)
+                    {
+                        if (calenderLink.Text == currentDay.ToString())
+                        {
+                            calenderLink.Click();
+                            break;
+                        }
+                    }
+
+                    
+                }
+            }
+
 
             
-          
+
+
+
 
             parkingCalculatorPage.BtnCalculate.Click();
 
