@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PageBase.cs" />
+    <Compile Include="PageDeclarations\CalendarWindow.cs" />
     <Compile Include="PageDeclarations\ParkingCalculatorPage.cs" />
     <Compile Include="Pages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

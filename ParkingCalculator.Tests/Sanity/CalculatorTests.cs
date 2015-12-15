@@ -42,63 +42,18 @@ namespace ParkingCalculator.Tests.Sanity
         [TestMethod]
         public void StpLotTest()
         {
-
-
             //ARRANGE
             ParkingCalculatorPage parkingCalculatorPage = new ParkingCalculatorPage();
             parkingCalculatorPage.Invoke();
 
             //ACT
-
             parkingCalculatorPage.DdlChooseALot.SelectByText("Short-Term Parking");
 
-            string currentWindowName = parkingCalculatorPage.Driver.CurrentWindowHandle;
-
             parkingCalculatorPage.BtnEntryDateTimeCalendar.Click();
+            parkingCalculatorPage.EntryCalendarWindow.ClickByDay(DateTime.Now.Day);
 
-
-
-            IList<string> windowNames = parkingCalculatorPage.Driver.WindowHandles;
-
-            foreach (var windowName in windowNames)
-            {
-                if (!windowName.Equals(currentWindowName))
-                {
-                    IWebDriver webDriver = parkingCalculatorPage.Driver.SwitchTo().Window(windowName);
-
-                    ReadOnlyCollection<IWebElement> tds = webDriver.FindElements(By.TagName("td"));
-
-                    IList<IWebElement> calenderLinks = new List<IWebElement>();
-                    foreach (var td in tds)
-                    {
-                        if (td.GetAttribute("width") == "20")
-                        {
-                            IWebElement link = td.FindElement(By.TagName("a"));
-                            calenderLinks.Add(link);
-                        }
-                    }
-
-                    //////////
-                    int currentDay = DateTime.Now.Day;
-
-                    foreach (var calenderLink in calenderLinks)
-                    {
-                        if (calenderLink.Text == currentDay.ToString())
-                        {
-                            calenderLink.Click();
-                            break;
-                        }
-                    }
-
-                    
-                }
-            }
-
-
-            
-
-
-
+            parkingCalculatorPage.BtnLeavingDateTimeCalendar.Click();
+            parkingCalculatorPage.LeavingCalendarWindow.ClickByDay(DateTime.Now.AddDays(1).Day);
 
             parkingCalculatorPage.BtnCalculate.Click();
 
