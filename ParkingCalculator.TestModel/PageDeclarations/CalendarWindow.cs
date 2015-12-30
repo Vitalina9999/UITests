@@ -65,7 +65,10 @@ namespace ParkingCalculator.TestModel.PageDeclarations
                 if (td.GetAttribute("width") == "20")
                 {
                     IWebElement link = td.FindElement(By.TagName("a"));
-                    _calendarDaysLinks.Add(link);
+                    if (!string.IsNullOrEmpty(link.Text.Trim()))
+                    {
+                        _calendarDaysLinks.Add(link);
+                    }
                 }
             }
         }

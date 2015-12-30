@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\LotEnumType.cs" />
     <Compile Include="PageBase.cs" />
     <Compile Include="PageDeclarations\CalendarWindow.cs" />
     <Compile Include="PageDeclarations\ParkingCalculatorPage.cs" />
